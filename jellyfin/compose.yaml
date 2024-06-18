@@ -1,0 +1,25 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:latest
+    container_name: jellyfin
+    hostname: jellyfin
+    restart: unless-stopped
+    networks:
+      - jelly-net
+    labels:
+      caddy: $MY_URL
+      caddy.redir: /jellyfin /jellyfin/
+      caddy.reverse_proxy: "/jellyfin/* {{upstreams http 8096}}"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - $HDD_MOUNT:/media/:ro
+    ports:
+      - "8096:8096"
+      - "1900:1900/udp"
+
+networks:
+  jelly-net:
+    external: true
+    name: $DOCKER_MY_NETWORK
+

@@ -1,0 +1,26 @@
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    networks:
+      - transmission-net
+    labels:
+      caddy: $MY_URL
+      caddy.reverse_proxy: "/tr* {{upstreams http 9091}}"
+    environment:
+      - USER=$USER
+      - PASS=$PASS
+      - PUID=$PUID
+      - PGID=$PGID
+
+    volumes:
+      - ./data:/config
+      - ./watch:/watch
+      - $HDD_MOUNT:/downloads
+
+    restart: unless-stopped
+
+networks:
+  transmission-net:
+    external: true
+    name: $DOCKER_MY_NETWORK
