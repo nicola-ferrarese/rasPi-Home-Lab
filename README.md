@@ -10,16 +10,11 @@ This project is based on the following components:
 - 📥 [Transmission](https://transmissionbt.com/) for media downloading.
 - 🎥 [Jellyfin](https://jellyfin.org/) for media serving.
 - 🌐 [Caddy](https://caddyserver.com/) for managing TLS and SSH, exposing only the necessary services.
-
+- ⚙️ [Portainer](https://www.portainer.io/) for managing Docker containers via a web interface.
 
 ![grafana](grafanaDash.png)
-## Prerequisites ✅
-
-Before we get started installing the stack, we need to make sure that the following prerequisites are met:
-
-- 🐳 Docker is installed on the host machine.
-- 📦 Docker Compose is installed on the host machine.
-- 🖥️ The host machine is running a Raspberry Pi OS or any other compatible Linux distribution.
+![portainer](portainer.png)
+![jellyfin](jellyfin.png)
 
 ## Services 🔧
 
@@ -31,6 +26,10 @@ All these services are secured and managed by Caddy. Caddy simplifies your serve
 
 The monitoring solution uses Grafana, Prometheus, cAdvisor, and Node-Exporter Stack. With Grafana's intuitive dashboards, you can easily visualize system metrics collected by Prometheus and cAdvisor, while Node-Exporter provides valuable information about the Raspberry Pi's hardware and operating system.
 
+
+### Container Management ⚙️
+
+Portainer is used for managing Docker containers. It provides a simple and easy-to-use web interface for managing your Docker environment, allowing you to deploy, configure, and troubleshoot your containers effortlessly.
 ### Media Downloading 📥
 
 Transmission is used for media downloading. It is a fast, easy, and free BitTorrent client with a robust set of features.
@@ -39,4 +38,6 @@ Transmission is used for media downloading. It is a fast, easy, and free BitTorr
 
 Jellyfin is used for media serving. It is a free software media system that lets you control your media from a web interface.
 
-ù
+### Container Management ⚙️
+
+Portainer is used for managing Docker containers. It provides a simple and easy-to-use web interface for managing your Docker environment, allowing you to deploy, configure, and troubleshoot your containers effortlessly.
