@@ -9,4 +9,4 @@ include:
 
 networks:
   homelab-network:
-    driver: bridge
+    external: true
