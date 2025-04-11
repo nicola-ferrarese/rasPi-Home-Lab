@@ -1,0 +1,19 @@
+services:
+  portainer:
+    container_name: homelab-portainer
+    image: portainer/portainer-ce:latest
+    networks:
+      - homelab-network
+    labels:
+      caddy: $MY_URL
+      caddy.handle_path: "/portainer*"
+      caddy.handle_path.reverse_proxy: "{{upstreams http 9002}}"
+    ports:
+      - 9442:9443
+      - 9002:9000
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+volumes:
+    data:

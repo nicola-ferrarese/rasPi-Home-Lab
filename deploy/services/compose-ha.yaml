@@ -1,0 +1,12 @@
+services:
+  homeassistant:
+    container_name: homeassistant
+    image: homeassistant/home-assistant
+    privileged: true
+    restart: unless-stopped
+    environment:
+      - TZ=Europe/Rome
+    volumes:
+      - ../../services/homeassistant/config:/config
+      - /run/dbus:/run/dbus:ro
+    network_mode: host

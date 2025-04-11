@@ -1,0 +1,22 @@
+services:
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: transmission
+    networks:
+      - homelab-network
+    labels:
+      caddy: $MY_URL
+      caddy.reverse_proxy: "/tr* {{upstreams http 9091}}"
+    #environment:
+    #  - USER=$USER
+    #  - PASS=$PASS
+    #  - PUID=$PUID
+    #  - PGID=$PGID
+    env_file:
+      - ../../services/transmission/.env #used to store transmission-sensitive configurations, see above variables
+    volumes:
+      - ../../services/transmission/data:/config
+      - ../../services/transmission/watch:/watch
+      - $HDD_MOUNT:/downloads
+
+    restart: unless-stopped

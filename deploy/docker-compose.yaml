@@ -1,0 +1,12 @@
+include:
+  - ./services/compose-caddy.yaml
+  - ./services/compose-monitoring.yaml
+  - ./services/compose-portainer.yaml
+  - ./services/compose-ha.yaml
+  - ./services/compose-jellyfin.yaml
+  - ./services/compose-transmission.yaml
+
+
+networks:
+  homelab-network:
+    driver: bridge

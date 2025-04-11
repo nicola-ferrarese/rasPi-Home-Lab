@@ -1,0 +1,9 @@
+.resume
+.idea
+/deploy/services/compose-TyrianProxy.yaml
+/services/transmission/.env
+/services/tyrian-proxy/
+/services/homeassistant/config/
+/services/jellyfin/cache/
+/services/jellyfin/config/
+/services/transmission/data/
