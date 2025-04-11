@@ -1,5 +1,14 @@
 # Raspberry Pi Home Lab 🏡
 
+## Getting Started
+You will need: 
+- A configured domain (static or dynamic) 
+- Port 443 and 80 open in your router and pointing to your server, caddy will handle TLS and SSL
+- Create beforehand a docker network called "homelab-network"
+- Configure accordingly the .env file, present in <project-root>/deploy
+
+Then, all you have to do is docker compose up & enjoy :D
+
 ## Introduction 📚
 
 Welcome to the Raspberry Pi Home Lab project! This project aims to provide a comprehensive and user-friendly way to set up a home server using your Raspberry Pi. The server includes monitoring, media downloading, and media serving functionalities, all secured and managed by Caddy.
@@ -16,14 +25,7 @@ This project is based on the following components:
 ![portainer](img/portainer.png)
 ![jellyfin](img/jellyfin.png)
 
-## Getting Started
-You will need: 
-- A configured domain (static or dynamic) 
-- Port 443 and 80 open in your router and pointing to your server, caddy will handle TLS and SSL
-- Create beforehand a docker network called "homelab-network"
-- Configure accordingly the .env file, present in <project-root>/deploy
 
-Then, all you have to do is docker compose up & enjoy :D
 
 ## Services 🔧
 
